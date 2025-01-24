@@ -1,0 +1,81 @@
+.loader-1 {
+    height: 47px;
+    aspect-ratio: 5;
+    --c: #000 90deg,#0000 0;
+    background:
+     conic-gradient(from 135deg at top   ,var(--c)),
+     conic-gradient(from -45deg at bottom,var(--c)) 12.5% 100%;
+    background-size: 20% 50%;
+    background-repeat: repeat-x;
+    animation: l1 .8s infinite linear;
+  }
+  @keyframes l1{
+    to {background-position: 25% 0,37.5% 100%}
+  }
+  .loader-2 {
+    height: 47px;
+    aspect-ratio: 5;
+    --c: #000 90deg,#0000 0;
+    background:
+     conic-gradient(from 135deg at top   ,var(--c)),
+     conic-gradient(from -45deg at bottom,var(--c)) 12.5% 100%;
+    background-size: 20% 50%;
+    background-repeat: repeat-x;
+    clip-path: inset(0 100% 0 0);
+    animation: l12 2.5s infinite steps(11) alternate;
+  }
+  @keyframes l12{
+    to {clip-path: inset(0 -10% 0 0)}
+  }
+  
+  .loader-3 {
+    height: 47px;
+    aspect-ratio: 5;
+    --c: #000 90deg,#0000 0;
+    background:
+     conic-gradient(from 135deg at top   ,var(--c)),
+     conic-gradient(from -45deg at bottom,var(--c)) 12.5% 100%;
+    background-size: 20% 50%;
+    background-repeat: repeat-x;
+    clip-path: inset(0 60% 0 0);
+    animation: l5 .8s infinite linear alternate;
+  }
+  @keyframes l5{
+    to {clip-path: inset(0 0 0 60%)}
+  }
+  
+  .loader-4 {
+    display: inline-grid;
+  }
+  .loader-4:before,
+  .loader-4:after {
+    content: "";
+    grid-area: 1/1;
+    height: 47px;
+    aspect-ratio: 5;
+    --c: #000 90deg,#0000 0;
+    background:
+     conic-gradient(from 135deg at top   ,var(--c)),
+     conic-gradient(from -45deg at bottom,var(--c)) 12.5% 100%;
+    background-size: 20% 50%;
+    background-repeat: repeat-x;
+    mask: repeating-linear-gradient(90deg,#000 0 10%,#0000 0 20%);
+    clip-path: inset(0 100% 0 0);
+    animation: l16 1.5s infinite steps(6);
+  }
+  .loader-4:after {
+    mask: repeating-linear-gradient(90deg,#0000 0 10%,#000 0 20%);
+    animation-delay: -.75s;
+  }
+  @keyframes l16{
+    50%,100% {clip-path: inset(0 -20% 0 0)}
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-template-columns: auto auto;
+    gap: 50px;
+  }
